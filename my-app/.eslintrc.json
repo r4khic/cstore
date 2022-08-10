@@ -1,0 +1,60 @@
+{
+  "extends": ["plugin:@typescript-eslint/recommended", "airbnb-typescript", "prettier", "plugin:import/recommended", "eslint:recommended", "next"],
+  "ignorePatterns": ["*.config.js"],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": "."
+  },
+  "plugins": ["@typescript-eslint"],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": "tsconfig.json"
+      }
+    }
+  },
+  "rules": {
+    "no-plusplus": "off",
+    "import/no-unresolved": "off",
+    "import/order": [
+      "warn",
+      {
+        "groups": ["builtin", "external", "internal", "sibling"],
+        "newlines-between": "never"
+      }
+    ],
+    "import/no-cycle": [
+      "warn",
+      {
+        "maxDepth": 2
+      }
+    ],
+    "no-empty": [
+      "error",
+      {
+        "allowEmptyCatch": true
+      }
+    ],
+    "consistent-return": "off",
+    "react/state-in-constructor": 0,
+    "react/jsx-props-no-spreading": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "max-classes-per-file": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "react/static-property-placement": "off",
+    "newline-before-return": "error",
+    "jsx-a11y/anchor-is-valid": 0,
+    "@typescript-eslint/no-redeclare": "off",
+    "arrow-body-style": "off",
+    "react/jsx-filename-extension": [0]
+  }
+}
